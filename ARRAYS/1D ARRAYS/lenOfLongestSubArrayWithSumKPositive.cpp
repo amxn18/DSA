@@ -16,7 +16,9 @@ int longestSubarray(vector<int>&nums, int k){
             int len = i - mp[rem];
             maxLen = max(maxLen, len);
         }
-        mp[sum] = i;
+        if(mp.find(sum) == mp.end()){
+            mp[sum] = i; // Store the first occurrence of the sum
+        }
     }
     return maxLen;
 }
