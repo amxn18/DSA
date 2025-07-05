@@ -8,7 +8,7 @@ int subArrayWithXorK(vector<int>& nums, int k){
     int ctr = 0;
     mp[xr]++;
     for(int i=0; i<n; i++){
-        xr = xr^k;
+        xr = xr^nums[i];
         int x = xr^k;
         ctr += mp[x];
         mp[xr]++;
