@@ -14,7 +14,9 @@ public:
                 result = mid;
                 if(firstFind == true){
                     high = mid-1; // Search on left side
-                } else low = mid+1; // Search on right side
+                } else {          // Search on right side
+                    low = mid+1;
+                } 
             } 
             else if(target > nums[mid]) low = mid+1;
             else high = mid-1;
