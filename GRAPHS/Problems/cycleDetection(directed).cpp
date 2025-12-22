@@ -36,3 +36,33 @@ public:
 // Using BFS 
 // Time Complexity: O(V + E)
 // Space Complexity: O(V)
+
+class Solution {
+  public:
+    bool isCyclic(int V, vector<vector<int>> &adj) {
+        vector<int> indeg(V, 0);
+        for(int u=0; u<V; u++){
+            for(auto v : adj[u]){
+                indeg[v]++;
+            }
+        }
+        queue<int> q;
+        for(int i=0; i<V; i++){
+            if(indeg[i] == 0) q.push(i);
+        }
+        int ctr = 0;
+        while(!q.empty()){
+            int u = q.front();
+            q.pop();
+            ctr++;
+            for(auto v : adj[u]){
+                indeg[v]--;
+                if(indeg[v] == 0){
+                    q.push(v);
+                }
+            }
+        }
+        if(ctr == V) return false;
+        return true;
+    }
+};
