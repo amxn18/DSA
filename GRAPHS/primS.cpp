@@ -1,43 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 class Solution {
-    public:
-        typedef pair<int, int> p;
-    
-        
-        int spanningTree(int V, vector<vector<int>> adj[]) {
-            priority_queue<p, vector<p>, greater<p>> pq;
-            pq.push({0, 0});
-    
-            vector<bool> inMst(V, false);
-            vector<int> parent(V, -1); // Initialize parent array
-            int sum = 0;
-    
-            while (!pq.empty()) {
-                auto p = pq.top();
-                pq.pop();
-    
-                int wt = p.first;
-                int node = p.second;
-    
-                if (inMst[node] == true) continue;
-    
-                inMst[node] = true;
-                sum += wt;
-    
-                for (auto &tp : adj[node]) {
-                    int neighbour = tp[0];
-                    int neighbourWt = tp[1];
-    
-                    if (inMst[neighbour] == false) {
-                        pq.push({neighbourWt, neighbour});
-                        parent[neighbour] = node; // Store the parent
-                    }
+public:
+    typedef pair<int,int> P; // {weight, node}
+
+    int spanningTree(int V, vector<vector<int>>& edges) {
+
+        vector<vector<P>> adj(V);
+        for (auto &edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int wt = edge[2];
+            adj[u].push_back({v, wt});
+            adj[v].push_back({u, wt});
+        }
+
+        vector<bool> inMST(V, false);
+        priority_queue<P, vector<P>, greater<P>> pq;
+
+        pq.push({0, 0});  
+        int sum = 0;
+
+        while (!pq.empty()) {
+            int wt = pq.top().first;
+            int u = pq.top().second;
+            pq.pop();
+
+            if (inMST[u]) continue;
+
+            inMST[u] = true;
+            sum += wt;
+
+            for (auto &it : adj[u]) {
+                int v = it.first;
+                int w = it.second;
+                if (!inMST[v]) {
+                    pq.push({w, v});
                 }
             }
-    
-            // Optional: parent[] now stores MST tree structure
-            return sum;
         }
-    };
-    
+        return sum;
+    }
+};
