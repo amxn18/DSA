@@ -62,4 +62,5 @@ public:
     }
 };
 
-// TC 
+// TC O(E log E)
+// SC O(V+E)
