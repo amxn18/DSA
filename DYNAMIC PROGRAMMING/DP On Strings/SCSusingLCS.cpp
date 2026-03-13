@@ -52,17 +52,3 @@ class Solution {
       }
   };
 
-//   # SCS using LCS (LC 1092 - Hard)
-
-// # Idea:
-// # - First find LCS of s1 and s2 using classic DP
-// # - Then reconstruct the SCS:
-// #   → If characters match, take once.
-// #   → Else, include from the string that gives longer LCS.
-
-// # TC: O(m * n)
-// # SC: O(m * n)
-
-// # Returns the actual Shortest Common Supersequence string.
-
-  
