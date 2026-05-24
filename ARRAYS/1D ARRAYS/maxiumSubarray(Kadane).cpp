@@ -37,3 +37,49 @@ public:
         return maxSum;
     }
 };
+
+// Method 3: Kadane's Algorithm: O(n) SC O(1)
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int maxSum = INT_MIN;
+        int currSum = 0;
+        for(int i=0; i<nums.size(); i++){
+            currSum += nums[i];
+            maxSum = max(maxSum, currSum);
+            if(currSum < 0) currSum = 0;
+        }
+        return maxSum;
+    }
+};
+
+// Printing the subarray with maximum sum: O(n) SC O(1)
+class Solution {
+public:
+
+    vector<int> maxSubArray(vector<int>& nums) {
+        int maxSum = INT_MIN;
+        int currentSum = 0;
+        int start = 0;
+        int end = 0;
+        int tempStart = 0;
+        for(int i = 0; i < nums.size(); i++) {
+            currentSum += nums[i];
+            if(currentSum > maxSum) {
+                maxSum = currentSum;
+                start = tempStart;
+                end = i;
+            }
+            // Discard the current sum if it becomes negative, and start a new subarray from the next index
+            if(currentSum < 0) {
+                currentSum = 0;
+                tempStart = i + 1;
+            }
+        }
+        vector<int> ans;
+        for(int i = start; i <= end; i++) {
+            ans.push_back(nums[i]);
+        }
+        return ans;
+    }
+};
