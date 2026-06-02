@@ -1,10 +1,10 @@
-# ⚔️ DSA Repository
+# DSA Repository
 
 This repository contains structured and topic-wise solutions to essential Data Structures and Algorithms (DSA) problems. Each folder represents a major topic, and includes clean, well-commented solutions.
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 | Folder Name         | Topic Description                  |
 |---------------------|------------------------------------|
@@ -26,22 +26,22 @@ This repository contains structured and topic-wise solutions to essential Data S
 
 ---
 
-## 🚀 Purpose
+##  Purpose
 
-- 📌 Build strong DSA fundamentals with clear code.
-- 📌 Prepare effectively for coding interviews.
-- 📌 Maintain a clean, organized GitHub portfolio.
+-  Build strong DSA fundamentals with clear code.
+-  Prepare effectively for coding interviews.
+-  Maintain a clean, organized GitHub portfolio.
 
 ---
 
-## 📎 How to Use
+##  How to Use
 
 1. Navigate to the desired topic folder.
 2. Each folder contains problem-wise solutions with proper naming.
 3. Most problems follow:
-   - ✅ Clean Code
-   - 🧠 Approach Explanation
-   - ⏱️ Time & Space Complexity
+   -  Clean Code
+   -  Approach Explanation
+   -  Time & Space Complexity
 
 ---
 
