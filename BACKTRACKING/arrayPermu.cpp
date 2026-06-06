@@ -48,16 +48,4 @@ class Solution {
         }
     };
     
-//     # This C++ program finds a permutation of an array such that  LC 3149
-// # the sum of absolute differences between consecutive elements is minimized.
 
-// # Approach:
-// # 1. Use backtracking to generate all possible permutations.
-// # 2. Maintain a minimum score (sum of absolute differences).
-// # 3. Prune (cut off) unnecessary recursive calls if the current score exceeds the minimum found so far.
-// # 4. Store the permutation with the lowest score.
-// # 5. Finally, return the best permutation.
-
-// # Time Complexity:
-// # - The approach generates O(n!) permutations in the worst case, making it exponential.
-// # - However, pruning helps reduce unnecessary computations.
