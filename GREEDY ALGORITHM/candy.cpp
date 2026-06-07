@@ -35,30 +35,3 @@ class Solution {
         }
     };
 
-//     Initialize candies:
-
-// Each child gets at least 1 candy, so we start with candy = n.
-
-// Iterate through ratings:
-
-// If ratings are equal, move to the next index (no extra candies needed).
-
-// Handle Increasing Slope (Peak Formation):
-
-// If ratings[i] > ratings[i-1], increase the peak counter and add peak candies.
-
-// Continue until the peak is reached.
-
-// Handle Decreasing Slope (Dip Formation):
-
-// If ratings[i] < ratings[i-1], increase the dip counter and add dip candies.
-
-// Continue until the dip ends.
-
-// Adjust Overcounting:
-
-// The peak was counted twice (once in increasing and once in decreasing slope).
-
-// Subtract min(peak, dip) to fix the double count.
-
-// Return total candies.
