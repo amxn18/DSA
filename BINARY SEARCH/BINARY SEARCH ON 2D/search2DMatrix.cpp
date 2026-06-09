@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// LC 74. Search a 2D Matrix
+// M1 : TC O(n + log(m)) SC O(1)
 class Solution {
 public:
     bool BS(vector<int>& matrix, int target){
@@ -23,13 +25,31 @@ public:
         return false;
     }
 };
-// LC: 74
-// TC : O(n + log(m))
-// SC : O(1)
+// M2 : TC O(log(n * m)) SC O(1)
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int low = 0;
+        int high = m*n-1;
+        while(low <= high){
+            int mid = low + (high-low)/2;
+            int row = mid/n;
+            int col = mid%n;
+
+            if(matrix[row][col] == target) return true;
+            if(matrix[row][col] < target) low = mid+1;
+            else high = mid-1;
+        }
+        return false;
+    }
+};
 
 
 
-// LC: 240
+
+// LC: 240 Search a 2D Matrix II
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
@@ -46,5 +66,3 @@ public:
     }
 };
 
-// TC : O(n + m)
-// SC : O(1)
