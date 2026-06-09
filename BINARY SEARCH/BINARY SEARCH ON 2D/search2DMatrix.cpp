@@ -50,6 +50,7 @@ public:
 
 
 // LC: 240 Search a 2D Matrix II
+// TC TC : O(m+n) 
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
