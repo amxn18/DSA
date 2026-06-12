@@ -35,27 +35,4 @@ class Solution {
         }
     };
     
-    // Leetcode 2597 (Beautiful Subsets).
-
-    // # Step 1: Define a recursive function `solve(idx, nums, mp)`.
-    // # - The function explores all possible subsets while ensuring the difference condition.
-    
-    // # Base Case:
-    // # - If `idx` reaches the end of `nums`, increase the subset count (`result++`).
-    
-    // # Step 2: Explore two choices for each element:
-    // # - 1) **Exclude the current element** → Continue without adding it to the subset.
-    // # - 2) **Include the current element** only if:
-    // #       - The subset does not already contain `nums[idx] - K` or `nums[idx] + K`.
-    
-    // # Step 3: Use a hash map `mp` to track the elements in the subset.
-    
-    // # Step 4: Implement Backtracking.
-    // # - If we add an element, we backtrack by removing it before returning.
-    
-    // # Step 5: Subtract 1 from the final result to exclude the empty subset.
-    
-    // # Time Complexity: O(2^n) (since we explore all subsets).
-    // # Space Complexity: O(n) (recursion stack and hash map).
-    
-    // # This approach efficiently finds all valid subsets that satisfy the given condition.
+   
