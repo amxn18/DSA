@@ -25,8 +25,8 @@ class Solution {
         while(low <= high){
             int mid = low + (high-low)/2;
             int students = findStudents(arr, mid);
-            if(students > k) low = mid+1;
-            else high = mid-1;
+            if(students > k) low = mid+1; // need more pages 
+            else high = mid-1; // need less pages
         }
         return low;
         
