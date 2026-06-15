@@ -42,19 +42,4 @@ class Solution {
             return result;
         }
     };
-//     # Problem: Maximum Number of Achievable Transfer Requests (Leetcode 1601)
-// # Approach: Backtracking
 
-// # 1. We have `n` buildings and `m` transfer requests (move employee from building A to B).
-// # 2. Goal: Select maximum number of requests such that at the end, all buildings have net zero change.
-
-// # Steps:
-// # - Use backtracking to explore all subsets of requests.
-// # - Maintain a `resultant` array of size `n` to track net change in each building.
-// # - At each step:
-// #   - Accept the request (update `resultant` and recurse).
-// #   - Backtrack (undo the change) and try ignoring the request.
-// # - If at the end `resultant` has all zeros, update the `result` (max requests accepted).
-
-// # Time Complexity: O(2^m) - Every request has two choices (accept/reject)
-// # Space Complexity: O(n) - Storing the net change of employees per building
