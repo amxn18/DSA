@@ -2,7 +2,8 @@
 using namespace std;
 
 // Using DFS 
-// TC O(V + E) SC O(V)
+// TC: O(E) {Adjcancy List} + O(V) {Each vertex} + O(E) {Inside DFS} → TC: O(V+ E)  
+// SC: O(V+E) {Adjacency List} + O(V) {visited array} + O(V) {Rec Stack} -> SC : O(V+E)
 
 class Solution {
 public:
@@ -13,8 +14,8 @@ public:
         visited[u] = true;
         for (int v : adj[u]) {
             if (v == parent) continue;
-            if (visited[v]) return true;
-            if (dfs(v, adj, visited, u)) return true;
+            if (visited[v] && v != parent) return true;
+            if (!visited [v] && dfs(v, adj, visited, u)) return true;
         }
         return false;
     }
@@ -38,7 +39,7 @@ public:
 };
 
 // Using BFS 
-// TC O(V + E) SC O(V)
+// TC: O(V+E), SC: O(V+E)
 class Solution {
   public:
     typedef pair<int, int> P;
@@ -51,7 +52,7 @@ class Solution {
             q.pop();
             int src = curr.first;
             int parent = curr.second;
-            for(auto v : adj[u]){
+            for(auto v : adj[src]){
                 if(!visited[v]){
                     visited[v] = true;
                     q.push({v,src});
