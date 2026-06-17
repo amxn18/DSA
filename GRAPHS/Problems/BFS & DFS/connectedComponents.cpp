@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// No of connected components in an undirected graph.
+// Connected Components in Undirected Graph
 // TC : O(V+E) and SC: O(V+E) for adj list + O(V) for visited array + O(V) for recursion stack.
 class Solution {
   public:
