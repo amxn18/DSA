@@ -2,7 +2,7 @@
 using namespace std;
 
 // LC 126: Word Ladder II
-// Method 1
+// Method 1 TC: O(N*L*P) where N is the number of words in the wordList, L is the length of each word and P is the number of paths from beginWord to endWord. SC: O(N*L) for storing all the words in the set and O(N*L) for storing all the sequences in the queue.
 class Solution {
 public:
     vector<vector<string>> findLadders(string beginWord, string endWord, vector<string>& wordList) {
