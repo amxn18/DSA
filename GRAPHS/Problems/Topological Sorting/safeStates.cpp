@@ -36,15 +36,11 @@ public:
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
         int V = graph.size();
         vector<vector<int>> adj(V);
+        vector<int> indeg(V, 0);
         for(int u = 0; u<V; u++){
             for(auto v : graph[u]){
                 adj[v].push_back(u);  // Reverse each edge
-            }
-        }
-        vector<int> indeg(V, 0);
-        for(int u=0; u<V; u++){
-            for(auto v : adj[u]){
-                indeg[v]++;
+                indeg[u]++;  
             }
         }
         queue<int> q;
