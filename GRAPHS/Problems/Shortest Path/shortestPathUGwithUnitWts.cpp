@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// TC: O(V + E) where V is number of vertices and E is number of edges
+// SC: O(V + E)
 class Solution {
   public:
     vector<int> shortestPath(int V, vector<vector<int>> &edges, int src) {
