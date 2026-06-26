@@ -28,8 +28,8 @@ public:
         else if (rank[pu] > rank[pv])
             parent[pv] = pu;
         else {
-            parent[pv] = pu;
-            rank[pu]++;
+            parent[pv] = pu; // or parent[pu] = pv
+            rank[pu]++; // or rank[pv]++;
         }
     }
 };
