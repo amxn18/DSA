@@ -35,3 +35,13 @@ public:
 };
 
 int main() {}
+
+int findParent(int node, vector<int>& parent){
+    if(node == parent[node]) return node; // Parent of node is itself
+    return findParent(parent[node], parent); // Recursively find the parent
+}
+void UnionBasic(int u, int v, vector<int>& parent){
+    int parentX = findParent(u, parent);
+    int parentY = findParent(v, parent);
+    if(parentX != parentY) parent[parentY] = parentX; //(parent[parentX] = parentY) // Union the two sets
+}
