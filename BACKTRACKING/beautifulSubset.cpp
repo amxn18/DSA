@@ -14,10 +14,10 @@ class Solution {
                 return;
             }
     
-            // Option 1: Do not take the current element
+            
             solve(idx+1, nums, mp);
     
-            // Option 2: Take the current element only if it does not violate the condition
+            
             if(!mp[nums[idx] - K] && !mp[nums[idx] + K]){  
                 mp[nums[idx]]++;  // Mark this number as used
                 solve(idx+1, nums, mp);  // Recur for the next index
