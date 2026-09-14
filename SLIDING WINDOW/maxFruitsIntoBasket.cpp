@@ -40,3 +40,26 @@ public:
         return maxLen;
     }
 };
+
+class Solution {
+public:
+    int totalFruit(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0;
+        int j = 0;
+
+        int maxCount = 0;
+        unordered_map<int, int> mp;
+        while(j<n){
+            mp[nums[j]]++;
+            if(mp.size() <= 2) maxCount = max(maxCount, j-i+1);
+            else{
+                mp[nums[i]]--;
+                if(mp[nums[i]] == 0) mp.erase(nums[i]);
+                i++;
+            }
+            j++;
+        }
+        return maxCount;
+    }
+};
