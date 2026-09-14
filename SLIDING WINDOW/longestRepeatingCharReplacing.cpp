@@ -24,24 +24,27 @@ public:
     }
 };
 
-// Method 2 : Sliding Window + HashMap --> TC ~O(N) SC ~O(26)
 class Solution {
 public:
     int characterReplacement(string s, int k) {
-        int l = 0;
-        int r = 0;
-        int maxLen = 0;
+        int n = s.size();
+
+        int i = 0;
+        int j = 0;
+
         vector<int> freq(26, 0);
         int maxFreq = 0;
-        while(r < s.size()){
-            freq[s[r] - 'A']++;
-            maxFreq = max(maxFreq, freq[s[r] - 'A']);
-            while((r-l+1) - maxFreq > k){
-                freq[s[l] - 'A']--;
-                l++;
-            } 
-            maxLen = max(maxLen, r-l+1);
-            r++;
+        int maxLen = 0;
+        while(j<n){
+            freq[s[j]-'A']++;
+            maxFreq = max(maxFreq, freq[s[j] -'A']);
+            
+            while((j-i+1) - maxFreq > k){
+                freq[s[i]-'A']--;
+                i++;
+            }
+            maxLen = max(maxLen, j-i+1);
+            j++;
         }
         return maxLen;
     }
